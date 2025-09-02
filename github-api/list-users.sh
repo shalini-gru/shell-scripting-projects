@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#########
+#About : This script when executed shows the thes list of users who have access to this repo
+# Input: export username="username"
+#Input : export GITHUB_TOKEN=token
+#Owner:Shalin K
+#########
+helper()
 # GitHub API URL
 API_URL="https://api.github.com"
 
@@ -34,6 +41,13 @@ function list_users_with_read_access {
         echo "Users with read access to ${REPO_OWNER}/${REPO_NAME}:"
         echo "$collaborators"
     fi
+}
+
+function helper{
+    expected_cmd_args =2
+    if [ $# -ne $expected_cmd_args];then
+    echo "Pease invoke the script with required cmd args"
+    
 }
 
 # Main script
